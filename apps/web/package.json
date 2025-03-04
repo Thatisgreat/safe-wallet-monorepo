@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next dev",
-    "build": "next build",
+    "build": "next build && yarn post_build_cp",
     "lint": "tsc && next lint",
     "lint:fix": "next lint --fix",
     "prettier": "prettier -w \"{src,cypress,mocks,scripts}/**/*.{ts,tsx,css,js}\"",
@@ -30,7 +30,8 @@
     "static-serve": "yarn build && yarn serve",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --quiet"
+    "build-storybook": "storybook build --quiet",
+    "post_build_cp": "bash post_build_cp.sh"
   },
   "engines": {
     "node": ">=18"

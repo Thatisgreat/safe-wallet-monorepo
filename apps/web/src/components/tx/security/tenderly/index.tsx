@@ -151,6 +151,7 @@ const TxSimulationBlock = ({ transactions, disabled, gasLimit, executionOwner }:
 
 export const TxSimulation = (props: TxSimulationProps): ReactElement | null => {
   const chain = useCurrentChain()
+  console.log(chain, !chain, !isTxSimulationEnabled(chain))
 
   if (!chain || !isTxSimulationEnabled(chain)) {
     return null
